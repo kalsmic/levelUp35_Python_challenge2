@@ -2,6 +2,7 @@ import sys
 from solution.number_0 import get_student_grades
 from solution.number_1 import get_multiples_of_seven_not_divisible_by_five
 from solution.number_2 import sequence_capitalizer
+from solution.number_3 import get_numbers_divisible_by_five
 from solution.number_4 import transact
 from solution.number_5 import print_list
 
@@ -35,7 +36,7 @@ while True:
             print("-" * 60)
 
         elif int(input_option) == 3:
-            print("Not yet compeleted, kindly choose another option \n")
+            get_multiples_of_seven_not_divisible_by_five()
             print("-" * 60)
 
         elif int(input_option) == 4:
