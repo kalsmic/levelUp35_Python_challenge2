@@ -29,7 +29,9 @@ def sequence_capitalizer():
 
 
     while True:
-        print("Enter 1 to add another sentence \n 2 to print Capitalized sequence \n Enter r to return to the main menu \n Enter q to quit")
+        print("** Enter 1 to add another sentence")
+        print("** Enter 2 to print the Capitalized sequence")
+        print("** Enter r to return to the main menu or q to quit")
         control_options = get_input("Enter your option: ")
         try:
             if int(control_options) == 1:

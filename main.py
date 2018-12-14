@@ -3,6 +3,7 @@ from solution.number_0 import get_student_grades
 from solution.number_1 import get_multiples_of_seven_not_divisible_by_five
 from solution.number_2 import sequence_capitalizer
 from solution.number_4 import transact
+from solution.number_5 import print_list
 
 print("Solutions to Level up 35 December Python challenges")
 while True:
@@ -24,17 +25,27 @@ while True:
             print("-" * 60)
 
         elif int(input_option) == 1:
+            print("numbers which are divisible by 7 but are not a multiple of 5,between 2000 and 3200 (both included).")
             get_multiples_of_seven_not_divisible_by_five()
             print("-" * 60)
 
         elif int(input_option) == 2:
+            print("This program capitalizes a sequence of lines")
             sequence_capitalizer()
             print("-" * 60)
 
-        elif int(input_option) == 3 or int(input_option) == 4:
+        elif int(input_option) == 3:
             print("Not yet compeleted, kindly choose another option \n")
             print("-" * 60)
 
+        elif int(input_option) == 4:
+            transact()
+            print("-" * 60)
+
+        elif int(input_option) == 5:
+            print("The first five elements in a list of five square numbers between 1 and 20 (both included)")
+            print_list()
+            print("-" * 60)
     except ValueError:
         if input_option == 'q':
             print("Thank you for reviewing my solutions. Bye Bye")
