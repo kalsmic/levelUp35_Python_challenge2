@@ -36,7 +36,7 @@ while True:
             print("-" * 60)
 
         elif int(input_option) == 3:
-            get_multiples_of_seven_not_divisible_by_five()
+            get_numbers_divisible_by_five()
             print("-" * 60)
 
         elif int(input_option) == 4:

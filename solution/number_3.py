@@ -1,21 +1,9 @@
-#
-# QN3
-# Write a program which accepts a sequence of comma separated 4 digit binary numbers as its input and then check whether they are divisible by 5 or not. The numbers that are divisible by 5 are to be printed in a comma separated sequence.
-# Example:
-# 0100,0011,1010,1001
-# Then the output should be:
-# 1010
-# Notes: Assume the data is input by console.
-#
-# Hints:
-# In case of input data being supplied to the question, it should be assumed to be a console input.
+import sys
 def get_input(message):
     return input(message)
 
-def validate_user_input():
-    number_sequence = get_input("Enter a sequence of comma separated 4 digit binary numbers: ")
+def validate_input(number_sequence):
     numbers_list = number_sequence.split(",")
-    print(numbers_list)
 
     if len(numbers_list) != 4:
         print("Provide a sequence of exactly four binary numbers separated by a comma")
@@ -23,18 +11,38 @@ def validate_user_input():
 
     for number in numbers_list:
         try:
-            number = int(number,int(2))
+            number = int(number, int(2))
+
         except ValueError:
             print("You did not provide a sequence of binary numbers")
-            return None
-
     return numbers_list
 
 def get_numbers_divisible_by_five():
-    binary_numbers_list = validate_user_input()
+    while True:
+        print("** Enter 1 to try out this solution")
+        print("** Enter r to return to the main menu or q to quit")
+        control_options = get_input("Enter your option: ")
+        try:
+            if int(control_options) == 1:
 
-    for binary_number in binary_numbers_list:
-        decimal_number = int(binary_number,2)
-        if decimal_number % 5 == 0:
-            print(str(binary_number),end=",")
+                print()
+                number_sequence = get_input("Enter a sequence of comma separated 4 digit binary numbers: ")
+                numbers_list = validate_input(number_sequence)
+                if not isinstance(numbers_list,list):
+                    continue
+                for binary_number in numbers_list:
+                    decimal_number = int(binary_number, 2)
+                    if decimal_number % 5 == 0:
+                        print(str(binary_number), end=",")
+                return True
+#
+        except ValueError:
+            if control_options == 'r':
+                print("Thank you for reviewing solution 3.")
+                return False
+            elif control_options == 'q':
+                print("Thank you for reviewing solution 3. Bye Bye")
+                sys.exit(0)
+            else:
+                print("You did not enter a valid response")
 
